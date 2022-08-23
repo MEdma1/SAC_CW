@@ -1,6 +1,9 @@
 (function() {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
+    
+    <button type="button" onclick="document.write(5 + 6)">Try it</button>
+    
     `;
 
     customElements.define('com-sac-customwidget-helloworld2', class HelloWorld2 extends HTMLElement {

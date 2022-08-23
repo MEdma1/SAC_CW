@@ -59,7 +59,8 @@
 	//Getter & Setter
 	get getMData() {
 		console.log("getMData");
-		return dataset;
+		return this._values2;
+		var Mdata = this._values2
         }
 	get getTestData() {
 		return [{group: "abc", value: 123},{group: "def", value: 456}];

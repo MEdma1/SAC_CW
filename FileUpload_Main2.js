@@ -6,6 +6,8 @@
 	   {group: "C", value: 8}
 	];
 	
+	let CustData = "123"
+	
 	
 	let tmpl = document.createElement('template');
     tmpl.innerHTML = `
@@ -60,18 +62,18 @@
 
 	//Getter & Setter
 	get getMData() {
-		console.log("getData");
+		console.log("getMData");
 		return dataset;
         }
 	get getTestData() {
 		return [{group: "abc", value: 123},{group: "def", value: 456}];
         }
 	get getCustomData() {
-		return dataset
+		return CustData
         }   
 	set setCustomData(value) {
-		console.log("setData");
-		dataset = value;
+		console.log("setCustData");
+		CustData = value;
         }
 	    
 

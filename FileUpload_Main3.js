@@ -12,61 +12,61 @@
 	</head> 
 	
 	<body>
-				<script>
-					var ExcelToJSON = function() {
+		<script>
+			var ExcelToJSON = function() {
 
-						this.parseExcel = function(file) {
-							var reader = new FileReader();
-							console.log(["T1", reader]);
+				this.parseExcel = function(file) {
+					var reader = new FileReader();
+					console.log(["T1", reader]);
 
-							reader.onload = function(e) {
-								var data = e.target.result;
-								console.log(["T2", data]);
-								var workbook = XLSX.read(data, {
-									type: 'binary'
-								});
-								console.log(["T3", workbook]);
+					reader.onload = function(e) {
+						var data = e.target.result;
+						console.log(["T2", data]);
+						var workbook = XLSX.read(data, {
+							type: 'binary'
+						});
+						console.log(["T3", workbook]);
 
-								workbook.SheetNames.forEach(function(sheetName) {
-									// Here is your object
-									var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-									console.log(["T4", XL_row_object]);
-									var json_object = JSON.stringify(XL_row_object);
-									console.log(["T5", json_object]);
+						workbook.SheetNames.forEach(function(sheetName) {
+							// Here is your object
+							var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+							console.log(["T4", XL_row_object]);
+							var json_object = JSON.stringify(XL_row_object);
+							console.log(["T5", json_object]);
 
-									console.log(JSON.parse(json_object));
-									jQuery('#xlx_json').val(json_object);
-								})
-							};
-
-							reader.onerror = function(ex) {
-								console.log(ex);
-							};
-
-							reader.readAsBinaryString(file);
-						};
+							console.log(JSON.parse(json_object));
+							jQuery('#xlx_json').val(json_object);
+						})
 					};
 
-					function handleFileSelect(evt) {
+					reader.onerror = function(ex) {
+						console.log(ex);
+					};
 
-						var files = evt.target.files; // FileList object
-						console.log(["T6", files]);
-						var xl2json = new ExcelToJSON();
-						console.log(["T7", xl2json]);
-						xl2json.parseExcel(files[0]);
-					}
-				</script>
+					reader.readAsBinaryString(file);
+				};
+			};
 
-				<form enctype="multipart/form-data">
-					<input id="upload" type=file name="files[]">
-				</form>
+			function handleFileSelect(evt) {
 
-				<textarea class="form-control" rows=35 cols=120 id="xlx_json"></textarea>
+				var files = evt.target.files; // FileList object
+				console.log(["T6", files]);
+				var xl2json = new ExcelToJSON();
+				console.log(["T7", xl2json]);
+				xl2json.parseExcel(files[0]);
+			}
+		</script>
 
-				<script>
-					jQuery('#xlx_json').val("hallo");
-					document.getElementById('upload').addEventListener('change', handleFileSelect, false);
-				</script>
+		<form enctype="multipart/form-data">
+			<input id="upload" type=file name="files[]">
+		</form>
+
+		<textarea class="form-control" rows=35 cols=120 id="xlx_json"></textarea>
+
+		<script>
+			jQuery('#xlx_json').val("hallo");
+			document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+		</script>
     </body>
 
     	`;

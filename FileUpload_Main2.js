@@ -18,8 +18,6 @@
        		  <input id="upload" type=file name="files[]">
     		</form>
 
-    		<textarea class="form-control" rows=35 cols=120 id="xlx_json"></textarea>
-		
     `;
 
     customElements.define('com-sac-customwidget-fileupload2', class FileUplMaEr2 extends HTMLElement {

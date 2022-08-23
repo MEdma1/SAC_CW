@@ -1,16 +1,12 @@
 (function() {
     
-	var dataset = [
-	   {group: "A", value: 4},
-	   {group: "B", value: 16},
-	   {group: "C", value: 8}
-	];
+	var dataset = [{"Data_OS": "123OS"},{"Data_OS": "456OS"}];
 	
 	let CustData = "123"
 	
 	
 	let tmpl = document.createElement('template');
-    tmpl.innerHTML = `
+    	tmpl.innerHTML = `
     
 		<p>Excel File Upload Version 2.1</p>
 		
@@ -18,7 +14,7 @@
        		  <input id="upload" type=file name="files[]">
     		</form>
 
-    `;
+    	`;
 
     customElements.define('com-sac-customwidget-fileupload2', class FileUplMaEr2 extends HTMLElement {
 
@@ -29,7 +25,9 @@
 			// write element functionality in here
             this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
-            this._firstConnection = false;
+            this._values1 = [];
+	    this._values2 = [{"Data": "123"},{"Data": "456"}];
+	    this._firstConnection = false;
         }
 
         //Fired when the widget is added to the html DOM of the page 

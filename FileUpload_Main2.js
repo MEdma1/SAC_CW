@@ -6,6 +6,7 @@
 	   {group: "C", value: 8}
 	];
 	
+	
 	let tmpl = document.createElement('template');
     tmpl.innerHTML = `
     
@@ -60,8 +61,7 @@
 		//Getter & Setter
 		get getMData() {
 			console.log("getData");
-			metadata = dataset;
-			return this.metadata;
+			return dataset;
         }
 
 

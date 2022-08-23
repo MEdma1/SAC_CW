@@ -61,7 +61,7 @@
 		//Getter & Setter
 		get getMData() {
 			console.log("getData");
-			return dataset;
+			return this.dataset;
         }
 
 

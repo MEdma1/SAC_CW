@@ -1,9 +1,9 @@
 (function() {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
-    
-    <button type="button" onclick="document.write(5 + 6)">Try it</button>
-    
+	    <div>
+		<button type="button" onclick="document.write(5 + 6)">Try it</button>
+	    </div>
     `;
 
     customElements.define('com-sac-customwidget-helloworld2', class HelloWorld2 extends HTMLElement {
@@ -14,9 +14,6 @@
             this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
             this._firstConnection = false;
-			this._tagContainer;
-            this._tagType = "h1";
-            this._tagText = "Hello World 2";
         }
 
         //Fired when the widget is added to the html DOM of the page

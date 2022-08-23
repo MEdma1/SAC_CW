@@ -58,10 +58,15 @@
 			console.log("removed");
 		}
 
-		//Getter & Setter
-		get getMData() {
-			console.log("getData");
-			return this.dataset;
+	//Getter & Setter
+	get getMData() {
+		console.log("getData");
+		return dataset;
+        }
+	    
+	get getTestData() {
+		console.log("getData");
+		return [{group: "abc", value: 123},{group: "def", value: 456}];
         }
 
 

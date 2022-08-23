@@ -3,13 +3,15 @@
 	
 	let tmpl = document.createElement('template');
     	tmpl.innerHTML = `
-    		
-		<p>Excel File Upload Version 3.0</p>
-		
-		
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
-				<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    	
+	<head>	
+		<p>Excel File Upload Version 3.1</p>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+	</head> 
+	
+	<body>
 				<script>
 					var ExcelToJSON = function() {
 
@@ -65,7 +67,7 @@
 					jQuery('#xlx_json').val("hallo");
 					document.getElementById('upload').addEventListener('change', handleFileSelect, false);
 				</script>
-
+    </body>
 
     	`;
 

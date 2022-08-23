@@ -10,6 +10,12 @@
     
 		<p>Excel File Upload Version 2.1</p>
 		
+		<style>
+		    input {
+		      color: darkturquoise;
+	            }
+		</style>
+		
 		<form enctype="multipart/form-data">
        		  <input id="upload" type=file name="files[]">
     		</form>

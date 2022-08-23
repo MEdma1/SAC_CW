@@ -63,12 +63,17 @@
 		console.log("getData");
 		return dataset;
         }
-	    
 	get getTestData() {
-		console.log("getData");
 		return [{group: "abc", value: 123},{group: "def", value: 456}];
         }
-
+	get getCustomData() {
+		return dataset
+        }   
+	set setCustomData(value) {
+		console.log("setData");
+		dataset = value;
+        }
+	    
 
     });
 })();

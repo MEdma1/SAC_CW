@@ -2,7 +2,7 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
     
-		<p>Excel File Upload</p>
+		<p>Excel File Upload Version 1.0</p>
 		
 		<form enctype="multipart/form-data">
        		  <input id="upload" type=file name="files[]">
